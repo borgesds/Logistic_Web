@@ -1,16 +1,20 @@
 import logo from '../../assets/box-truck.png'
+import { ButtonRegister, HeaderContainer, HeaderContent, Logo } from './styles'
 
 export function Header() {
   return (
-    <header>
-      <div>
-        <strong>Logistic</strong>
-        <img src={logo} alt="Caminhão" />
-      </div>
-      <div>
-        <button>Registro Entrada</button>
-        <button>Registro Saída</button>
-      </div>
-    </header>
+    <HeaderContainer>
+      <HeaderContent>
+        <Logo>
+          <strong>Logistic</strong>
+          <img src={logo} alt="Caminhão" />
+        </Logo>
+
+        <ButtonRegister>
+          <button>Registro Entrada</button>
+          <button>Registro Saída</button>
+        </ButtonRegister>
+      </HeaderContent>
+    </HeaderContainer>
   )
 }
