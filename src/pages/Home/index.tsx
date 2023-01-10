@@ -105,7 +105,6 @@ export function Home() {
                   <td>Valor unitário</td>
                   <td>Valor Total</td>
                 </tr>
-                
               </tbody>
             </table>
           </TableContainer>
