@@ -12,12 +12,13 @@ export const MainContent = styled.div`
   padding: 1rem;
 
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+`
 
-  div {
-    padding: 1rem;
-    background: ${(props) => props.theme['gray-900']};
-    border-radius: 8px;
-  }
+export const TableContainer = styled.div`
+  max-width: 850px;
+  padding: 1rem;
+  background: ${(props) => props.theme['gray-900']};
+  border-radius: 8px;
 `
