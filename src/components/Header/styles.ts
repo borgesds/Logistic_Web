@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   background: ${(props) => props.theme['gray-900']};
   padding: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const HeaderContent = styled.div`
@@ -52,6 +56,7 @@ export const ButtonRegister = styled.div`
 
     &:hover {
       background: ${(props) => props.theme['orange-700']};
+      transition: background 0.2s;
     }
   }
 `
