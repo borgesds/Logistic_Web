@@ -1,18 +1,13 @@
-import * as Tabs from '@radix-ui/react-tabs'
-import { TabsList, TabsRoot } from './styles'
+import { TabsContent, TabsList, TabsRoot, TabsTrigger } from './styles'
 
 export function TabsTable() {
   return (
     <TabsRoot defaultValue="tab1">
       <TabsList aria-label="Logistic">
-        <Tabs.Trigger className="TabsTrigger" value="tab1">
-          Estoque de Mercadorias
-        </Tabs.Trigger>
-        <Tabs.Trigger className="TabsTrigger" value="tab2">
-          Saídas de Mercadorias
-        </Tabs.Trigger>
+        <TabsTrigger value="tab1">Estoque de Mercadorias</TabsTrigger>
+        <TabsTrigger value="tab2">Saídas de Mercadorias</TabsTrigger>
       </TabsList>
-      <Tabs.Content className="TabsContent" value="tab1">
+      <TabsContent value="tab1">
         <table>
           <tbody>
             <tr>
@@ -106,8 +101,8 @@ export function TabsTable() {
             </tr>
           </tbody>
         </table>
-      </Tabs.Content>
-      <Tabs.Content className="TabsContent" value="tab2">
+      </TabsContent>
+      <TabsContent value="tab2">
         <table>
           <tbody>
             <tr>
@@ -201,7 +196,7 @@ export function TabsTable() {
             </tr>
           </tbody>
         </table>
-      </Tabs.Content>
+      </TabsContent>
     </TabsRoot>
   )
 }

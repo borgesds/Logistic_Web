@@ -18,7 +18,4 @@ export const MainContent = styled.div`
 
 export const TableContainer = styled.div`
   max-width: 850px;
-  padding: 1rem;
-  background: ${(props) => props.theme['gray-900']};
-  border-radius: 8px;
 `
