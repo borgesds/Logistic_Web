@@ -1,5 +1,6 @@
 import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
+import { TabsTable } from '../../components/Tabs'
 import { MainContainer, MainContent, TableContainer } from './styles'
 
 export function Home() {
@@ -14,99 +15,7 @@ export function Home() {
           </div>
 
           <TableContainer>
-            <table>
-              <tbody>
-                <tr>
-                  <td width="30%">Empresa</td>
-                  <td>Número da nota</td>
-                  <td>Data de Emissão</td>
-                  <td>Número do produto</td>
-                  <td>Nome do produto</td>
-                  <td>Tipo do produto</td>
-                  <td>Quantidade</td>
-                  <td>Valor unitário</td>
-                  <td>Valor Total</td>
-                </tr>
-
-                <tr>
-                  <td width="30%">Empresa</td>
-                  <td>Número da nota</td>
-                  <td>Data de Emissão</td>
-                  <td>Número do produto</td>
-                  <td>Nome do produto</td>
-                  <td>Tipo do produto</td>
-                  <td>Quantidade</td>
-                  <td>Valor unitário</td>
-                  <td>Valor Total</td>
-                </tr>
-                <tr>
-                  <td width="30%">Empresa</td>
-                  <td>Número da nota</td>
-                  <td>Data de Emissão</td>
-                  <td>Número do produto</td>
-                  <td>Nome do produto</td>
-                  <td>Tipo do produto</td>
-                  <td>Quantidade</td>
-                  <td>Valor unitário</td>
-                  <td>Valor Total</td>
-                </tr>
-                <tr>
-                  <td width="30%">Empresa</td>
-                  <td>Número da nota</td>
-                  <td>Data de Emissão</td>
-                  <td>Número do produto</td>
-                  <td>Nome do produto</td>
-                  <td>Tipo do produto</td>
-                  <td>Quantidade</td>
-                  <td>Valor unitário</td>
-                  <td>Valor Total</td>
-                </tr>
-                <tr>
-                  <td width="30%">Empresa</td>
-                  <td>Número da nota</td>
-                  <td>Data de Emissão</td>
-                  <td>Número do produto</td>
-                  <td>Nome do produto</td>
-                  <td>Tipo do produto</td>
-                  <td>Quantidade</td>
-                  <td>Valor unitário</td>
-                  <td>Valor Total</td>
-                </tr>
-                <tr>
-                  <td width="30%">Empresa</td>
-                  <td>Número da nota</td>
-                  <td>Data de Emissão</td>
-                  <td>Número do produto</td>
-                  <td>Nome do produto</td>
-                  <td>Tipo do produto</td>
-                  <td>Quantidade</td>
-                  <td>Valor unitário</td>
-                  <td>Valor Total</td>
-                </tr>
-                <tr>
-                  <td width="30%">Empresa</td>
-                  <td>Número da nota</td>
-                  <td>Data de Emissão</td>
-                  <td>Número do produto</td>
-                  <td>Nome do produto</td>
-                  <td>Tipo do produto</td>
-                  <td>Quantidade</td>
-                  <td>Valor unitário</td>
-                  <td>Valor Total</td>
-                </tr>
-                <tr>
-                  <td width="30%">Empresa</td>
-                  <td>Número da nota</td>
-                  <td>Data de Emissão</td>
-                  <td>Número do produto</td>
-                  <td>Nome do produto</td>
-                  <td>Tipo do produto</td>
-                  <td>Quantidade</td>
-                  <td>Valor unitário</td>
-                  <td>Valor Total</td>
-                </tr>
-              </tbody>
-            </table>
+            <TabsTable />
           </TableContainer>
         </MainContent>
       </MainContainer>
