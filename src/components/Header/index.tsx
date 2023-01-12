@@ -6,7 +6,7 @@ export function Header() {
     <HeaderContainer>
       <HeaderContent>
         <Logo>
-          <strong>Logistic</strong>
+          <strong>Central Logistic</strong>
           <img src={logo} alt="Caminhão" />
         </Logo>
 
