@@ -8,14 +8,14 @@ export const MainContainer = styled.main`
 
 export const MainContent = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   padding: 1rem;
 
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 2fr;
   gap: 2rem;
 `
 
 export const TableContainer = styled.div`
-  max-width: 850px;
+  max-width: 1000px;
 `

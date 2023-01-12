@@ -50,9 +50,35 @@ export const TabsContent = styled(Tabs.Content)`
   background-color: ${(props) => props.theme['gray-600']};
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  outline: none;
+  max-height: 480px;
+  overflow: scroll;
 
   focus {
     box-shadow: 0 0 0 2px ${(props) => props.theme['orange-500']};
+  }
+`
+
+export const DataTable = styled.table`
+  width: 1400px;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+
+  th {
+    padding: 1rem;
+    background: ${(props) => props.theme['gray-700']};
+    font-size: small;
+
+    &:first-child {
+      border-top-left-radius: 8px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 8px;
+    }
+  }
+
+  td {
+    padding: 1.25rem 1rem;
+    font-size: small;
   }
 `

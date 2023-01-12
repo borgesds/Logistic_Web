@@ -1,4 +1,10 @@
-import { TabsContent, TabsList, TabsRoot, TabsTrigger } from './styles'
+import {
+  DataTable,
+  TabsContent,
+  TabsList,
+  TabsRoot,
+  TabsTrigger,
+} from './styles'
 
 export function TabsTable() {
   return (
@@ -8,14 +14,28 @@ export function TabsTable() {
         <TabsTrigger value="tab2">Saídas de Mercadorias</TabsTrigger>
       </TabsList>
       <TabsContent value="tab1">
-        <table>
+        <DataTable>
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Número da nota</th>
+              <th>Data de Emissão</th>
+              <th>Produto</th>
+              <th>Nome do produto</th>
+              <th>Tipo do produto</th>
+              <th>Quantidade</th>
+              <th>Valor unitário</th>
+              <th>Valor Total</th>
+            </tr>
+          </thead>
+
           <tbody>
             <tr>
               <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
-              <td>Nome do produto</td>
+              <td>Produto</td>
+              <td>Nome do produto dddd</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
@@ -26,7 +46,7 @@ export function TabsTable() {
               <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -37,7 +57,7 @@ export function TabsTable() {
               <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -48,7 +68,7 @@ export function TabsTable() {
               <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -59,7 +79,7 @@ export function TabsTable() {
               <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -70,7 +90,7 @@ export function TabsTable() {
               <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -81,7 +101,7 @@ export function TabsTable() {
               <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -92,7 +112,40 @@ export function TabsTable() {
               <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
+              <td>Nome do produto</td>
+              <td>Tipo do produto</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>Número da nota</td>
+              <td>Data de Emissão</td>
+              <td>Produto</td>
+              <td>Nome do produto</td>
+              <td>Tipo do produto</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>Número da nota</td>
+              <td>Data de Emissão</td>
+              <td>Produto</td>
+              <td>Nome do produto</td>
+              <td>Tipo do produto</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>Número da nota</td>
+              <td>Data de Emissão</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -100,16 +153,30 @@ export function TabsTable() {
               <td>Valor Total</td>
             </tr>
           </tbody>
-        </table>
+        </DataTable>
       </TabsContent>
       <TabsContent value="tab2">
-        <table>
+        <DataTable>
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Número da nota</th>
+              <th>Data de Emissão</th>
+              <th>Produto</th>
+              <th>Nome do produto</th>
+              <th>Tipo do produto</th>
+              <th>Quantidade</th>
+              <th>Valor unitário</th>
+              <th>Valor Total</th>
+            </tr>
+          </thead>
+
           <tbody>
             <tr>
-              <td width="30%">Coleta</td>
+              <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -118,10 +185,10 @@ export function TabsTable() {
             </tr>
 
             <tr>
-              <td width="30%">Coleta</td>
+              <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -129,10 +196,10 @@ export function TabsTable() {
               <td>Valor Total</td>
             </tr>
             <tr>
-              <td width="30%">Coleta</td>
+              <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -140,10 +207,10 @@ export function TabsTable() {
               <td>Valor Total</td>
             </tr>
             <tr>
-              <td width="30%">Coleta</td>
+              <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -151,10 +218,10 @@ export function TabsTable() {
               <td>Valor Total</td>
             </tr>
             <tr>
-              <td width="30%">Coleta</td>
+              <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -162,10 +229,10 @@ export function TabsTable() {
               <td>Valor Total</td>
             </tr>
             <tr>
-              <td width="30%">Coleta</td>
+              <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -173,10 +240,10 @@ export function TabsTable() {
               <td>Valor Total</td>
             </tr>
             <tr>
-              <td width="30%">Coleta</td>
+              <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -184,10 +251,10 @@ export function TabsTable() {
               <td>Valor Total</td>
             </tr>
             <tr>
-              <td width="30%">Coleta</td>
+              <td width="30%">Empresa</td>
               <td>Número da nota</td>
               <td>Data de Emissão</td>
-              <td>Número do produto</td>
+              <td>Produto</td>
               <td>Nome do produto</td>
               <td>Tipo do produto</td>
               <td>Quantidade</td>
@@ -195,7 +262,7 @@ export function TabsTable() {
               <td>Valor Total</td>
             </tr>
           </tbody>
-        </table>
+        </DataTable>
       </TabsContent>
     </TabsRoot>
   )
