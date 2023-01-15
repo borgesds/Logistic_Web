@@ -5,6 +5,7 @@ import {
   TabsRoot,
   TabsTrigger,
   ThirdPartyProducts,
+  TypeProducts,
 } from './styles'
 
 export function TabsTable() {
@@ -37,7 +38,7 @@ export function TabsTable() {
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Alimento</td>
+              <TypeProducts variant="food">Alimento</TypeProducts>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
@@ -49,7 +50,7 @@ export function TabsTable() {
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Alimento</td>
+              <TypeProducts variant="industrial">Industrial</TypeProducts>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
@@ -61,7 +62,7 @@ export function TabsTable() {
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Alimento</td>
+              <TypeProducts variant="house">Casa</TypeProducts>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
@@ -73,7 +74,7 @@ export function TabsTable() {
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Alimento</td>
+              <TypeProducts variant="technology">Tecnologia</TypeProducts>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
@@ -84,7 +85,7 @@ export function TabsTable() {
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Alimento</td>
+              <TypeProducts variant="others">Outros</TypeProducts>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
@@ -96,7 +97,7 @@ export function TabsTable() {
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Alimento</td>
+              <TypeProducts variant="food">Alimento</TypeProducts>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>

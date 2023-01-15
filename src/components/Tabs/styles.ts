@@ -65,7 +65,7 @@ export const DataTable = styled.table`
 
   th {
     padding: 1rem;
-    background: ${(props) => props.theme['gray-700']};
+    background: ${(props) => props.theme['gray-800']};
     font-size: small;
 
     &:first-child {
@@ -80,6 +80,7 @@ export const DataTable = styled.table`
   td {
     padding: 1.25rem 1rem;
     font-size: small;
+    border-bottom: 1px solid ${(props) => props.theme['gray-800']};
   }
 `
 
@@ -92,4 +93,26 @@ export const ThirdPartyProducts = styled.td<ThirdPartyProductsProps>`
     props.variant === 'no'
       ? props.theme['green-500']
       : props.theme['yellow-500']};
+`
+
+interface TypeProductsProps {
+  variant: 'food' | 'industrial' | 'house' | 'public' | 'technology' | 'others'
+}
+
+export const TypeProducts = styled.td<TypeProductsProps>`
+  color: ${(props) => {
+    if (props.variant === 'food') {
+      return props.theme['orange-500']
+    } else if (props.variant === 'industrial') {
+      return props.theme.darkTurquoise
+    } else if (props.variant === 'house') {
+      return props.theme.darkMagenta
+    } else if (props.variant === 'public') {
+      return props.theme['yellow-500']
+    } else if (props.variant === 'technology') {
+      return props.theme.blue
+    } else {
+      return props.theme.white
+    }
+  }}};
 `
