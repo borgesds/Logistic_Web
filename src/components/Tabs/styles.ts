@@ -82,3 +82,14 @@ export const DataTable = styled.table`
     font-size: small;
   }
 `
+
+interface ThirdPartyProductsProps {
+  variant: 'yes' | 'no'
+}
+
+export const ThirdPartyProducts = styled.td<ThirdPartyProductsProps>`
+  color: ${(props) =>
+    props.variant === 'no'
+      ? props.theme['green-500']
+      : props.theme['yellow-500']};
+`

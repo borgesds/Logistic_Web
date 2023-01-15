@@ -4,6 +4,7 @@ import {
   TabsList,
   TabsRoot,
   TabsTrigger,
+  ThirdPartyProducts,
 } from './styles'
 
 export function TabsTable() {
@@ -20,7 +21,7 @@ export function TabsTable() {
               <th>Empresa</th>
               <th>Número da nota</th>
               <th>Data de Emissão</th>
-              <th>Produto</th>
+              <th>Terceiro</th>
               <th>Nome do produto</th>
               <th>Tipo do produto</th>
               <th>Quantidade</th>
@@ -32,11 +33,11 @@ export function TabsTable() {
           <tbody>
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
-              <td>Nome do produto dddd</td>
-              <td>Tipo do produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
@@ -44,110 +45,104 @@ export function TabsTable() {
 
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <td>Alimento</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
             </tr>
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
             </tr>
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
             </tr>
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
             </tr>
+
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
-              <td>Nome do produto</td>
-              <td>Tipo do produto</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
-              <td>Nome do produto</td>
-              <td>Tipo do produto</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
-              <td>Nome do produto</td>
-              <td>Tipo do produto</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
-              <td>Nome do produto</td>
-              <td>Tipo do produto</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
-              <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
@@ -162,7 +157,7 @@ export function TabsTable() {
               <th>Empresa</th>
               <th>Número da nota</th>
               <th>Data de Emissão</th>
-              <th>Produto</th>
+              <th>Terceiro</th>
               <th>Nome do produto</th>
               <th>Tipo do produto</th>
               <th>Quantidade</th>
@@ -174,11 +169,11 @@ export function TabsTable() {
           <tbody>
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
@@ -186,77 +181,104 @@ export function TabsTable() {
 
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <td>Alimento</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
             </tr>
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
             </tr>
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
+
+            <tr>
+              <td width="30%">Empresa</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
             </tr>
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
             </tr>
+
             <tr>
               <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
               <td>Nome do produto</td>
-              <td>Tipo do produto</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
-              <td>Nome do produto</td>
-              <td>Tipo do produto</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>Número da nota</td>
-              <td>Data de Emissão</td>
-              <td>Produto</td>
-              <td>Nome do produto</td>
-              <td>Tipo do produto</td>
+              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
