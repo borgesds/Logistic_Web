@@ -33,7 +33,7 @@ export function TabsTable() {
 
           <tbody>
             <tr>
-              <td width="30%">Empresa</td>
+              <td width="20%">Empresa</td>
               <td>1213243355</td>
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
@@ -45,7 +45,7 @@ export function TabsTable() {
             </tr>
 
             <tr>
-              <td width="30%">Empresa</td>
+              <td width="20%">Empresa</td>
               <td>1213243355</td>
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
@@ -57,7 +57,7 @@ export function TabsTable() {
             </tr>
 
             <tr>
-              <td width="30%">Empresa</td>
+              <td width="20%">Empresa</td>
               <td>1213243355</td>
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
@@ -69,7 +69,7 @@ export function TabsTable() {
             </tr>
 
             <tr>
-              <td width="30%">Empresa</td>
+              <td width="20%">Empresa</td>
               <td>1213243355</td>
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
@@ -80,70 +80,12 @@ export function TabsTable() {
               <td>Valor Total</td>
             </tr>
             <tr>
-              <td width="30%">Empresa</td>
+              <td width="20%">Empresa</td>
               <td>1213243355</td>
               <td>22-12-2022</td>
               <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
               <td>Nome do produto</td>
               <TypeProducts variant="others">Outros</TypeProducts>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <TypeProducts variant="food">Alimento</TypeProducts>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
               <td>Quantidade</td>
               <td>Valor unitário</td>
               <td>Valor Total</td>
