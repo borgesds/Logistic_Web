@@ -10,6 +10,8 @@ export const SummaryCard = styled.div`
   background: ${(props) => props.theme['gray-600']};
   border-radius: 8px;
   box-shadow: 3px 5px 10px ${(props) => props.theme['gray-900']};
+  transition: all 0.3s;
+  cursor: pointer;
 
   header {
     display: flex;
@@ -21,5 +23,10 @@ export const SummaryCard = styled.div`
   strong {
     display: block;
     margin-top: 0.5rem;
+  }
+
+  &:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
 `
