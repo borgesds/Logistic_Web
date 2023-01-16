@@ -1,6 +1,12 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { X } from 'phosphor-react'
-import { CloseButton, Content, Overlay } from './styles'
+import {
+  CloseButton,
+  Content,
+  Overlay,
+  ThirdType,
+  ThirdTypeButton,
+} from './styles'
 
 export function NewCheckInModal() {
   return (
@@ -18,15 +24,19 @@ export function NewCheckInModal() {
           <input type="text" placeholder="Empresa" required />
           <input type="number" placeholder="Número da nota" required />
           <input type="date" placeholder="Data de Emissão" required />
-          <div>
-            <span>Terceiro?</span>
 
-            <input type="radio" placeholder="Terceiro" value="Sim" required />
-            <label htmlFor="terceiro">Sim</label>
-            <input type="radio" placeholder="Terceiro" value="Não" required />
-            <label htmlFor="terceiro">Não</label>
-          </div>
+          <ThirdType>
+            <ThirdTypeButton variant="yes">
+              <span>Terceiro? Sim</span>
+            </ThirdTypeButton>
+
+            <ThirdTypeButton variant="no">
+              <span>Terceiro? Não</span>
+            </ThirdTypeButton>
+          </ThirdType>
+
           <input type="text" placeholder="Nome do produto" required />
+
           <div>
             <span>Tipo do produto</span>
 

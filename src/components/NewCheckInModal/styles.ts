@@ -71,3 +71,40 @@ export const CloseButton = styled(Dialog.Close)`
     color: ${(props) => props.theme['red-500']};
   }
 `
+
+export const ThirdType = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+`
+
+interface ThirdTypeButtonProps {
+  variant: 'yes' | 'no'
+}
+
+export const ThirdTypeButton = styled.button<ThirdTypeButtonProps>`
+  background: ${(props) => props.theme['gray-600']};
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid ${(props) => props.theme['orange-500']};
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: ${(props) => props.theme['gray-100']};
+
+  span {
+    color: ${(props) =>
+      props.variant === 'yes'
+        ? props.theme['orange-700']
+        : props.theme['green-500']};
+  }
+
+  &:hover {
+    background: ${(props) => props.theme['gray-700']};
+    border: 1px solid ${(props) => props.theme['orange-700']};
+  }
+`
