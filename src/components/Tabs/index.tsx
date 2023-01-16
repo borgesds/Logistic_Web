@@ -90,6 +90,18 @@ export function TabsTable() {
               <td>Valor unitário</td>
               <td>Valor Total</td>
             </tr>
+
+            <tr>
+              <td width="20%">Empresa</td>
+              <td>1213243355</td>
+              <td>22-12-2022</td>
+              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
+              <td>Nome do produto</td>
+              <TypeProducts variant="others">Outros</TypeProducts>
+              <td>Quantidade</td>
+              <td>Valor unitário</td>
+              <td>Valor Total</td>
+            </tr>
           </tbody>
         </DataTable>
       </TabsContent>
