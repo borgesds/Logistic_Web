@@ -25,55 +25,61 @@ export function NewCheckInModal() {
         </CloseButton>
 
         <form action="">
-          <input type="text" placeholder="Empresa" required />
-          <input type="number" placeholder="Número da nota" required />
-          <input type="date" placeholder="Data de Emissão" required />
+          <div>
+            <input type="text" placeholder="Empresa" required />
+            <input type="text" placeholder="Nome do produto" required />
+            <input type="number" placeholder="Número da nota" required />
+            <input type="date" placeholder="Data de Emissão" required />
 
-          <ThirdType>
-            <ThirdTypeButton variant="yes" value="sim">
-              <span>Terceiro? Sim</span>
-            </ThirdTypeButton>
+            <ThirdType>
+              <SpanTitle>Fornecedor</SpanTitle>
+              <ThirdTypeButton variant="yes" value="sim">
+                <span>Terceiro? Sim</span>
+              </ThirdTypeButton>
 
-            <ThirdTypeButton variant="no" value="não">
-              <span>Terceiro? Não</span>
-            </ThirdTypeButton>
-          </ThirdType>
+              <ThirdTypeButton variant="no" value="não">
+                <span>Terceiro? Não</span>
+              </ThirdTypeButton>
+            </ThirdType>
+          </div>
 
-          <input type="text" placeholder="Nome do produto" required />
+          <div>
+            <SpanTitle>Tipo do produto</SpanTitle>
 
-          <SpanTitle>Tipo do produto</SpanTitle>
+            <ProductType>
+              <DivProductType>
+                <ProductTypeButton value="Alimento">
+                  <span>Alimento</span>
+                </ProductTypeButton>
 
-          <ProductType>
-            <DivProductType>
-              <ProductTypeButton value="Alimento">
-                <span>Alimento</span>
-              </ProductTypeButton>
+                <ProductTypeButton value="Industrial">
+                  <span>Industrial</span>
+                </ProductTypeButton>
 
-              <ProductTypeButton value="Industrial">
-                <span>Industrial</span>
-              </ProductTypeButton>
+                <ProductTypeButton value="Casa">
+                  <span>Casa</span>
+                </ProductTypeButton>
+              </DivProductType>
 
-              <ProductTypeButton value="Casa">
-                <span>Casa</span>
-              </ProductTypeButton>
-            </DivProductType>
+              <DivProductType>
+                <ProductTypeButton value="Tecnologia">
+                  <span>Tecnologia</span>
+                </ProductTypeButton>
 
-            <DivProductType>
-              <ProductTypeButton value="Tecnologia">
-                <span>Tecnologia</span>
-              </ProductTypeButton>
+                <ProductTypeButton value="Outros">
+                  <span>Outros</span>
+                </ProductTypeButton>
+              </DivProductType>
+            </ProductType>
 
-              <ProductTypeButton value="Outros">
-                <span>Outros</span>
-              </ProductTypeButton>
-            </DivProductType>
-          </ProductType>
+            <input type="number" placeholder="Quantidade" required />
+            <input type="number" placeholder="Valor unitário" required />
+            <input type="number" placeholder="Valor Total" required />
 
-          <input type="number" placeholder="Quantidade" required />
-          <input type="number" placeholder="Valor unitário" required />
-          <input type="number" placeholder="Valor Total" required />
-
-          <button type="submit">Cadastrar</button>
+            <div>
+              <button type="submit">Cadastrar</button>
+            </div>
+          </div>
         </form>
       </Content>
     </Dialog.Portal>

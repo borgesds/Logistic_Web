@@ -15,16 +15,18 @@ export const TabsList = styled(Tabs.List)`
 
 export const TabsTrigger = styled(Tabs.Trigger)`
   font-family: inherit;
-  background-color: ${(props) => props.theme['gray-600']};
-  padding: 0 20px;
-  height: 45px;
+  background: ${(props) => props.theme['gray-600']};
+  padding: 0 1.25rem;
+  height: 2.813rem;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 1rem;
+  font-weight: bold;
   line-height: 1;
   color: ${(props) => props.theme['orange-500']};
+  border: 1px solid ${(props) => props.theme['orange-700']};
   user-select: none;
   cursor: pointer;
 
@@ -41,21 +43,23 @@ export const TabsTrigger = styled(Tabs.Trigger)`
 
   :hover {
     color: ${(props) => props.theme['gray-100']};
+    background: ${(props) => props.theme['gray-800']};
+  }
+
+  &[data-state='active'] {
+    color: ${(props) => props.theme['gray-100']};
+    background: ${(props) => props.theme['orange-700']};
   }
 `
 
 export const TabsContent = styled(Tabs.Content)`
   flex-grow: 1;
-  padding: 20px;
+  padding: 1.25rem;
   background-color: ${(props) => props.theme['gray-600']};
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   max-height: 480px;
   overflow: scroll;
-
-  focus {
-    box-shadow: 0 0 0 2px ${(props) => props.theme['orange-500']};
-  }
 `
 
 export const DataTable = styled.table`
@@ -114,5 +118,5 @@ export const TypeProducts = styled.td<TypeProductsProps>`
     } else {
       return props.theme.white
     }
-  }}};
+  }};
 `

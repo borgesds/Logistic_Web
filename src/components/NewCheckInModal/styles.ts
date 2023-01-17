@@ -11,7 +11,7 @@ export const Overlay = styled(Dialog.Overlay)`
 `
 
 export const Content = styled(Dialog.Content)`
-  min-width: 32rem;
+  min-width: 40rem;
   border-radius: 8px;
   padding: 2.5rem 3rem;
   background: ${(props) => props.theme['gray-700']};
@@ -22,28 +22,44 @@ export const Content = styled(Dialog.Content)`
   transform: translate(-50%, -50%);
 
   form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
     margin-top: 2rem;
 
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    flex-direction: row;
+    gap: 2rem;
 
-    input {
-      border-radius: 8px;
-      border: 0;
-      background: ${(props) => props.theme['gray-900']};
-      color: ${(props) => props.theme['gray-300']};
-      padding: 0.5rem;
+    div {
+      display: flex;
+      flex-direction: column;
+      min-width: 20rem;
+      gap: 0.25rem;
 
-      &::placeholder {
-        color: ${(props) => props.theme['gray-500']};
+      input {
+        border-radius: 8px;
+        border: 0;
+        background: ${(props) => props.theme['gray-900']};
+        color: ${(props) => props.theme['gray-300']};
+        padding: 0.5rem;
+
+        &::placeholder {
+          color: ${(props) => props.theme['gray-500']};
+        }
+
+        &:focus {
+          border: 1px solid ${(props) => props.theme['orange-500']};
+        }
       }
     }
 
     button[type='submit'] {
-      height: 35px;
+      height: 60px;
       border: 0;
-      background: ${(props) => props.theme['orange-500']};
+      background: ${(props) => props.theme['green-500']};
       color: ${(props) => props.theme.white};
       font-weight: bold;
       border-radius: 8px;
@@ -74,10 +90,7 @@ export const CloseButton = styled(Dialog.Close)`
 `
 
 export const ThirdType = styled(RadioGroup.Root)`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 `
 
 interface ThirdTypeButtonProps {
@@ -89,6 +102,7 @@ export const ThirdTypeButton = styled(RadioGroup.Item)<ThirdTypeButtonProps>`
   padding: 0.5rem;
   border: 1px solid ${(props) => props.theme['orange-500']};
   border-radius: 8px;
+  margin-top: 0.5rem;
   cursor: pointer;
   font-weight: bold;
 
