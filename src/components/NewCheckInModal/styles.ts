@@ -87,10 +87,6 @@ interface ThirdTypeButtonProps {
 export const ThirdTypeButton = styled(RadioGroup.Item)<ThirdTypeButtonProps>`
   background: ${(props) => props.theme['gray-600']};
   padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
   border: 1px solid ${(props) => props.theme['orange-500']};
   border-radius: 8px;
   cursor: pointer;
@@ -114,6 +110,53 @@ export const ThirdTypeButton = styled(RadioGroup.Item)<ThirdTypeButtonProps>`
       props.variant === 'yes'
         ? props.theme['orange-700']
         : props.theme['green-500']};
+
+    span {
+      color: ${(props) => props.theme.white};
+    }
+  }
+`
+
+export const SpanTitle = styled.span`
+  color: ${(props) => props.theme['gray-100']};
+  font-weight: bold;
+`
+
+export const ProductType = styled(RadioGroup.Root)`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+`
+
+export const DivProductType = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const ProductTypeButton = styled(RadioGroup.Item)`
+  background: ${(props) => props.theme['gray-600']};
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid ${(props) => props.theme['orange-500']};
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+
+  span {
+    color: ${(props) => props.theme['gray-100']};
+    font-weight: bold;
+  }
+
+  &:hover {
+    background: ${(props) => props.theme['gray-700']};
+    border: 1px solid ${(props) => props.theme['orange-700']};
+  }
+
+  /* deixar o botão selecionado quando clicar */
+  &[data-state='checked'] {
+    background: ${(props) => props.theme['orange-500']};
+    border: 1px solid ${(props) => props.theme['orange-700']};
 
     span {
       color: ${(props) => props.theme.white};

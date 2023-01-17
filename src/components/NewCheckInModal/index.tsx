@@ -3,7 +3,11 @@ import { X } from 'phosphor-react'
 import {
   CloseButton,
   Content,
+  DivProductType,
   Overlay,
+  ProductType,
+  ProductTypeButton,
+  SpanTitle,
   ThirdType,
   ThirdTypeButton,
 } from './styles'
@@ -37,49 +41,34 @@ export function NewCheckInModal() {
 
           <input type="text" placeholder="Nome do produto" required />
 
-          <div>
-            <span>Tipo do produto</span>
+          <SpanTitle>Tipo do produto</SpanTitle>
 
-            <input
-              type="radio"
-              placeholder="Tipo do produto"
-              value="Alimento"
-              required
-            />
-            <label htmlFor="terceiro">Alimento</label>
+          <ProductType>
+            <DivProductType>
+              <ProductTypeButton value="Alimento">
+                <span>Alimento</span>
+              </ProductTypeButton>
 
-            <input
-              type="radio"
-              placeholder="Tipo do produto"
-              value="Industrial"
-              required
-            />
-            <label htmlFor="terceiro">Industrial</label>
+              <ProductTypeButton value="Industrial">
+                <span>Industrial</span>
+              </ProductTypeButton>
 
-            <input
-              type="radio"
-              placeholder="Tipo do produto"
-              value="Casa"
-              required
-            />
-            <label htmlFor="terceiro">Casa</label>
+              <ProductTypeButton value="Casa">
+                <span>Casa</span>
+              </ProductTypeButton>
+            </DivProductType>
 
-            <input
-              type="radio"
-              placeholder="Tipo do produto"
-              value="	Tecnologia"
-              required
-            />
-            <label htmlFor="terceiro">Tecnologia</label>
+            <DivProductType>
+              <ProductTypeButton value="Tecnologia">
+                <span>Tecnologia</span>
+              </ProductTypeButton>
 
-            <input
-              type="radio"
-              placeholder="Tipo do produto"
-              value="Outros"
-              required
-            />
-            <label htmlFor="terceiro">Outros</label>
-          </div>
+              <ProductTypeButton value="Outros">
+                <span>Outros</span>
+              </ProductTypeButton>
+            </DivProductType>
+          </ProductType>
+
           <input type="number" placeholder="Quantidade" required />
           <input type="number" placeholder="Valor unitário" required />
           <input type="number" placeholder="Valor Total" required />
