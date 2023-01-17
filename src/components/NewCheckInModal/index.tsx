@@ -26,11 +26,11 @@ export function NewCheckInModal() {
           <input type="date" placeholder="Data de Emissão" required />
 
           <ThirdType>
-            <ThirdTypeButton variant="yes">
+            <ThirdTypeButton variant="yes" value="sim">
               <span>Terceiro? Sim</span>
             </ThirdTypeButton>
 
-            <ThirdTypeButton variant="no">
+            <ThirdTypeButton variant="no" value="não">
               <span>Terceiro? Não</span>
             </ThirdTypeButton>
           </ThirdType>
