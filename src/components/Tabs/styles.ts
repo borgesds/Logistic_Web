@@ -58,12 +58,12 @@ export const TabsContent = styled(Tabs.Content)`
   background-color: ${(props) => props.theme['gray-600']};
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  max-height: 480px;
+  max-height: 30rem;
   overflow: scroll;
 `
 
 export const DataTable = styled.table`
-  width: 1400px;
+  width: 87.5rem;
   border-collapse: separate;
   border-spacing: 0 0.5rem;
 
