@@ -9,13 +9,32 @@ import {
   TypeProducts,
 } from './styles'
 
+interface dataCheckInInput {
+  id: number
+  company: string
+  number_invoice: string
+  dateCheckin: string
+  third: 'yes' | 'no'
+  nameProduct: string
+  typeProduct:
+    | 'food'
+    | 'industrial'
+    | 'house'
+    | 'public'
+    | 'technology'
+    | 'others'
+  amount: number
+  unitaryValue: number
+  totalValue: number
+}
+
 export function TabsTable() {
-  const [dataCheckIn, setDataCheckIn] = useState([])
+  const [dataCheckIn, setDataCheckIn] = useState<dataCheckInInput[]>([])
 
   async function loadDataCheckIn() {
     const response = await fetch('http://localhost:3333/checkin')
     const data = await response.json()
-    console.log(data)
+    setDataCheckIn(data)
   }
 
   useEffect(() => {
