@@ -1,5 +1,91 @@
 {
     "checkin": [
-        
+        {
+            "id": 1,
+            "company": "John Marcenaria",
+            "number_invoice": "123456789",
+            "dateCheckin": "2023-01-19T09:26:25.951Z",
+            "third": "yes",
+            "nameProduct": "Armário Centralizado",
+            "typeProduct": "house",
+            "amount": 100,
+            "unitaryValue": 1600,
+            "totalValue": 160000
+        },
+        {
+            "id": 2,
+            "company": "Inptus technologies",
+            "number_invoice": "123567fgh789",
+            "dateCheckin": "2023-01-01T09:26:25.951Z",
+            "third": "yes",
+            "nameProduct": "Notebook Acer 8gigas ssd480 i7",
+            "typeProduct": "technology",
+            "amount": 80,
+            "unitaryValue": 4699,
+            "totalValue": 375920
+        },
+        {
+            "id": 3,
+            "company": "Inptus technologies",
+            "number_invoice": "74417fgh789",
+            "dateCheckin": "2023-01-04T09:26:25.951Z",
+            "third": "yes",
+            "nameProduct": "Tablet Multimedia",
+            "typeProduct": "technology",
+            "amount": 120,
+            "unitaryValue": 400,
+            "totalValue": 48000
+        },
+        {
+            "id": 4,
+            "company": "Central E-commerce",
+            "number_invoice": "3445568678097",
+            "dateCheckin": "2023-01-14T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Xaomi Note8",
+            "typeProduct": "technology",
+            "amount": 300,
+            "unitaryValue": 1459,
+            "totalValue": 464700
+        },
+        {
+            "id": 5,
+            "company": "Central E-commerce",
+            "number_invoice": "34g5h5565hh",
+            "dateCheckin": "2023-01-15T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Xaomi Relogio",
+            "typeProduct": "technology",
+            "amount": 300,
+            "unitaryValue": 900,
+            "totalValue": 270000
+        },
+        {
+            "id": 6,
+            "company": "Central E-commerce",
+            "number_invoice": "33242423465hh",
+            "dateCheckin": "2023-01-12T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Panelas Tramontina",
+            "typeProduct": "house",
+            "amount": 800,
+            "unitaryValue": 135,
+            "totalValue": 108000
+        }
+    ],
+
+    "output": [
+        {
+            "id": 1,
+            "company": "Inptus technologies",
+            "number_invoice": "12322ddd9",
+            "dateCheckin": "2023-01-19T09:26:25.951Z",
+            "third": "yes",
+            "nameProduct": "Notebook Acer 8gigas ssd480 i7",
+            "typeProduct": "technology",
+            "amount": 1,
+            "unitaryValue": 4699,
+            "totalValue": 4699
+        }
     ]
 }

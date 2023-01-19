@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import {
   DataTable,
   TabsContent,
@@ -9,6 +10,18 @@ import {
 } from './styles'
 
 export function TabsTable() {
+  const [dataCheckIn, setDataCheckIn] = useState([])
+
+  async function loadDataCheckIn() {
+    const response = await fetch('http://localhost:3333/checkin')
+    const data = await response.json()
+    console.log(data)
+  }
+
+  useEffect(() => {
+    loadDataCheckIn()
+  }, [])
+
   return (
     <TabsRoot defaultValue="tab1">
       <TabsList aria-label="Logistic">
