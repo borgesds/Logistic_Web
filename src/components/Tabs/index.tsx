@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
+import { DataTransactionContext } from '../../contexts/DataTrasactionsContext'
 import {
   DataTable,
   TabsContent,
@@ -9,37 +10,8 @@ import {
   TypeProducts,
 } from './styles'
 
-interface dataCheckInInput {
-  id: number
-  company: string
-  number_invoice: string
-  dateCheckin: string
-  third: 'yes' | 'no'
-  nameProduct: string
-  typeProduct:
-    | 'food'
-    | 'industrial'
-    | 'house'
-    | 'public'
-    | 'technology'
-    | 'others'
-  amount: number
-  unitaryValue: number
-  totalValue: number
-}
-
 export function TabsTable() {
-  const [dataCheckIn, setDataCheckIn] = useState<dataCheckInInput[]>([])
-
-  async function loadDataCheckIn() {
-    const response = await fetch('http://localhost:3333/checkin')
-    const data = await response.json()
-    setDataCheckIn(data)
-  }
-
-  useEffect(() => {
-    loadDataCheckIn()
-  }, [])
+  const { dataCheckIn } = useContext(DataTransactionContext)
 
   return (
     <TabsRoot defaultValue="tab1">
@@ -64,76 +36,25 @@ export function TabsTable() {
           </thead>
 
           <tbody>
-            <tr>
-              <td width="20%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <TypeProducts variant="food">Alimento</TypeProducts>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="20%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <TypeProducts variant="industrial">Industrial</TypeProducts>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="20%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <TypeProducts variant="house">Casa</TypeProducts>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="20%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <TypeProducts variant="technology">Tecnologia</TypeProducts>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="20%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <TypeProducts variant="others">Outros</TypeProducts>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="20%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <TypeProducts variant="others">Outros</TypeProducts>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
+            {dataCheckIn.map((dataCheckIn) => {
+              return (
+                <tr key={dataCheckIn.id}>
+                  <td width="20%">{dataCheckIn.company}</td>
+                  <td>{dataCheckIn.number_invoice}</td>
+                  <td>{dataCheckIn.dateCheckin}</td>
+                  <ThirdPartyProducts variant={dataCheckIn.third}>
+                    {dataCheckIn.third}
+                  </ThirdPartyProducts>
+                  <td>{dataCheckIn.nameProduct}</td>
+                  <TypeProducts variant={dataCheckIn.typeProduct}>
+                    {dataCheckIn.typeProduct}
+                  </TypeProducts>
+                  <td>{dataCheckIn.amount}</td>
+                  <td>{dataCheckIn.unitaryValue}</td>
+                  <td>{`R$ ${dataCheckIn.totalValue}`}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </DataTable>
       </TabsContent>
