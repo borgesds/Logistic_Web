@@ -1,6 +1,5 @@
 import {
   Calculator,
-  Cardholder,
   Coins,
   CurrencyDollarSimple,
   Package,
@@ -10,7 +9,24 @@ import { DataCheckContext } from '../../contexts/DataTrasactionsContext'
 import { SummaryCard, SummaryContainer } from './styles'
 
 export function Summary() {
-  const { dataCheckIn } = useContext(DataCheckContext)
+  const { dataCheckIn, dataOutput } = useContext(DataCheckContext)
+
+  const summary = dataCheckIn.reduce(
+    (acc, dataCheckIn) => {
+      acc.stockValue += dataCheckIn.totalValue
+
+      acc.stockQuantity += dataCheckIn.amount
+
+      return acc
+    },
+    {
+      stockValue: 0,
+      stockQuantity: 0,
+      salesAmount: 0,
+      salesQuantity: 0,
+      biggestSale: 0,
+    },
+  )
 
   return (
     <SummaryContainer>
@@ -20,16 +36,16 @@ export function Summary() {
           <Calculator size={32} color="#FF6B1A" />
         </header>
 
-        <strong>R$ 193002,80</strong>
+        <strong>{summary.stockValue}</strong>
       </SummaryCard>
 
       <SummaryCard>
         <header>
-          <span>Quantidade em Estoque</span>
+          <span>Qtd em Estoque</span>
           <Package size={32} color="#FF6B1A" />
         </header>
 
-        <strong>1322335</strong>
+        <strong>{summary.stockQuantity}</strong>
       </SummaryCard>
 
       <SummaryCard>
@@ -43,20 +59,11 @@ export function Summary() {
 
       <SummaryCard>
         <header>
-          <span>Quantidade Total</span>
+          <span>Quantidade Vendida</span>
           <Package size={32} color="#FF6B1A" />
         </header>
 
         <strong>1322335</strong>
-      </SummaryCard>
-
-      <SummaryCard>
-        <header>
-          <span>Quantidade de vendas</span>
-          <Cardholder size={32} color="#FF6B1A" />
-        </header>
-
-        <strong>R$ 193002,80</strong>
       </SummaryCard>
 
       <SummaryCard>

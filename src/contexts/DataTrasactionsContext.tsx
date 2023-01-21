@@ -35,6 +35,7 @@ interface dataTransactionProviderProps {
   children: ReactNode
 }
 
+/* vamos chamar a função por volta do <Home /> */
 export function DataTransactionProvider({
   children,
 }: dataTransactionProviderProps) {
