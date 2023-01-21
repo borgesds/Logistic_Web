@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 
-interface dataCheckInInput {
+interface dataInput {
   id: number
   company: string
   number_invoice: string
@@ -24,12 +24,12 @@ Esse é o valor que vai ser enviado, como:
 const { dataCheckIn } = useContext(DataTransactionContext)
 */
 interface DataTransactionContextType {
-  dataCheckIn: dataCheckInInput[]
+  dataCheckIn: dataInput[]
+  dataOutput: dataInput[]
 }
 
-export const DataTransactionContext = createContext(
-  {} as DataTransactionContextType,
-)
+/* dataCheckIn e dataOutput */
+export const DataCheckContext = createContext({} as DataTransactionContextType)
 
 interface dataTransactionProviderProps {
   children: ReactNode
@@ -38,21 +38,35 @@ interface dataTransactionProviderProps {
 export function DataTransactionProvider({
   children,
 }: dataTransactionProviderProps) {
-  const [dataCheckIn, setDataCheckIn] = useState<dataCheckInInput[]>([])
+  const [dataCheckIn, setDataCheckIn] = useState<dataInput[]>([])
+  const [dataOutput, setDataOutput] = useState<dataInput[]>([])
 
+  /* dataCheckIn */
   async function loadDataCheckIn() {
     const response = await fetch('http://localhost:3333/checkin')
     const data = await response.json()
     setDataCheckIn(data)
   }
 
+  /* dataOutput */
+  async function loadDataOutput() {
+    const response = await fetch('http://localhost:3333/output')
+    const data = await response.json()
+    setDataOutput(data)
+  }
+
+  console.log(dataOutput)
+
   useEffect(() => {
     loadDataCheckIn()
+    loadDataOutput()
   }, [])
 
   return (
-    <DataTransactionContext.Provider value={{ dataCheckIn }}>
-      {children}
-    </DataTransactionContext.Provider>
+    <>
+      <DataCheckContext.Provider value={{ dataCheckIn, dataOutput }}>
+        {children}
+      </DataCheckContext.Provider>
+    </>
   )
 }

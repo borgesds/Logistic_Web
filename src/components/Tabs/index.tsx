@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { DataTransactionContext } from '../../contexts/DataTrasactionsContext'
+import { DataCheckContext } from '../../contexts/DataTrasactionsContext'
 import {
   DataTable,
   TabsContent,
@@ -11,7 +11,7 @@ import {
 } from './styles'
 
 export function TabsTable() {
-  const { dataCheckIn } = useContext(DataTransactionContext)
+  const { dataCheckIn, dataOutput } = useContext(DataCheckContext)
 
   return (
     <TabsRoot defaultValue="tab1">
@@ -36,22 +36,22 @@ export function TabsTable() {
           </thead>
 
           <tbody>
-            {dataCheckIn.map((dataCheckIn) => {
+            {dataCheckIn.map((item) => {
               return (
-                <tr key={dataCheckIn.id}>
-                  <td width="20%">{dataCheckIn.company}</td>
-                  <td>{dataCheckIn.number_invoice}</td>
-                  <td>{dataCheckIn.dateCheckin}</td>
-                  <ThirdPartyProducts variant={dataCheckIn.third}>
-                    {dataCheckIn.third}
+                <tr key={item.id}>
+                  <td width="30%">{item.company}</td>
+                  <td>{item.number_invoice}</td>
+                  <td>{item.dateCheckin}</td>
+                  <ThirdPartyProducts variant={item.third}>
+                    {item.third}
                   </ThirdPartyProducts>
-                  <td>{dataCheckIn.nameProduct}</td>
-                  <TypeProducts variant={dataCheckIn.typeProduct}>
-                    {dataCheckIn.typeProduct}
+                  <td>{item.nameProduct}</td>
+                  <TypeProducts variant={item.typeProduct}>
+                    {item.typeProduct}
                   </TypeProducts>
-                  <td>{dataCheckIn.amount}</td>
-                  <td>{dataCheckIn.unitaryValue}</td>
-                  <td>{`R$ ${dataCheckIn.totalValue}`}</td>
+                  <td>{item.amount}</td>
+                  <td>{item.unitaryValue}</td>
+                  <td>{`R$ ${item.totalValue}`}</td>
                 </tr>
               )
             })}
@@ -75,122 +75,25 @@ export function TabsTable() {
           </thead>
 
           <tbody>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="yes">Sim</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
-
-            <tr>
-              <td width="30%">Empresa</td>
-              <td>1213243355</td>
-              <td>22-12-2022</td>
-              <ThirdPartyProducts variant="no">Não</ThirdPartyProducts>
-              <td>Nome do produto</td>
-              <td>Alimento</td>
-              <td>Quantidade</td>
-              <td>Valor unitário</td>
-              <td>Valor Total</td>
-            </tr>
+            {dataOutput.map((item) => {
+              return (
+                <tr key={item.id}>
+                  <td width="30%">{item.company}</td>
+                  <td>{item.number_invoice}</td>
+                  <td>{item.dateCheckin}</td>
+                  <ThirdPartyProducts variant={item.third}>
+                    {item.third}
+                  </ThirdPartyProducts>
+                  <td>{item.nameProduct}</td>
+                  <TypeProducts variant={item.typeProduct}>
+                    {item.typeProduct}
+                  </TypeProducts>
+                  <td>{item.amount}</td>
+                  <td>{item.unitaryValue}</td>
+                  <td>{`R$ ${item.totalValue}`}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </DataTable>
       </TabsContent>

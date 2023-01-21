@@ -5,9 +5,13 @@ import {
   CurrencyDollarSimple,
   Package,
 } from 'phosphor-react'
+import { useContext } from 'react'
+import { DataCheckContext } from '../../contexts/DataTrasactionsContext'
 import { SummaryCard, SummaryContainer } from './styles'
 
 export function Summary() {
+  const { dataCheckIn } = useContext(DataCheckContext)
+
   return (
     <SummaryContainer>
       <SummaryCard>
