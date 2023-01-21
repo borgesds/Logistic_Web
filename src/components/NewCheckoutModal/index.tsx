@@ -18,7 +18,7 @@ export function NewCheckoutModal() {
       <Overlay />
 
       <Content>
-        <Dialog.Title>Registro Entrada</Dialog.Title>
+        <Dialog.Title>Registro Saída</Dialog.Title>
 
         <CloseButton>
           <X size={24} />

@@ -16,7 +16,7 @@ export function Summary() {
     <SummaryContainer>
       <SummaryCard>
         <header>
-          <span>Total de Vendas Bruto</span>
+          <span>Valor do Estoque</span>
           <Calculator size={32} color="#FF6B1A" />
         </header>
 
@@ -25,7 +25,16 @@ export function Summary() {
 
       <SummaryCard>
         <header>
-          <span>Receita Líquida</span>
+          <span>Quantidade em Estoque</span>
+          <Package size={32} color="#FF6B1A" />
+        </header>
+
+        <strong>1322335</strong>
+      </SummaryCard>
+
+      <SummaryCard>
+        <header>
+          <span>Total em Vendas</span>
           <Coins size={32} color="#FF6B1A" />
         </header>
 

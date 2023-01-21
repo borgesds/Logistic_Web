@@ -84,8 +84,104 @@
             "nameProduct": "Notebook Acer 8 gigas ssd 480 i7",
             "typeProduct": "technology",
             "amount": 1,
-            "unitaryValue": 4699,
-            "totalValue": 4699
+            "unitaryValue": 5800,
+            "totalValue": 5800
+        },
+        {
+            "id": 2,
+            "company": "Inptus technologies",
+            "number_invoice": "123567fgh789",
+            "dateCheckin": "2023-01-01T09:26:25.951Z",
+            "third": "yes",
+            "nameProduct": "Notebook Acer 8gigas ssd480 i7",
+            "typeProduct": "technology",
+            "amount": 1,
+            "unitaryValue": 5800,
+            "totalValue": 5800
+        },
+        {
+            "id": 3,
+            "company": "Inptus technologies",
+            "number_invoice": "74417fgh789",
+            "dateCheckin": "2023-01-04T09:26:25.951Z",
+            "third": "yes",
+            "nameProduct": "Tablet Multimedia",
+            "typeProduct": "technology",
+            "amount": 2,
+            "unitaryValue": 600,
+            "totalValue": 1200
+        },
+        {
+            "id": 4,
+            "company": "Central E-commerce",
+            "number_invoice": "3445568678097",
+            "dateCheckin": "2023-01-14T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Xaomi Note8",
+            "typeProduct": "technology",
+            "amount": 3,
+            "unitaryValue": 1800,
+            "totalValue": 5400
+        },
+        {
+            "id": 5,
+            "company": "Central E-commerce",
+            "number_invoice": "34g5h5565hh",
+            "dateCheckin": "2023-01-15T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Xaomi Relogio",
+            "typeProduct": "technology",
+            "amount": 8,
+            "unitaryValue": 1350,
+            "totalValue": 10800
+        },
+        {
+            "id": 6,
+            "company": "Central E-commerce",
+            "number_invoice": "33242423465hh",
+            "dateCheckin": "2023-01-12T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Panelas Tramontina",
+            "typeProduct": "house",
+            "amount": 9,
+            "unitaryValue": 210,
+            "totalValue": 1890
+        },
+        {
+            "id": 7,
+            "company": "Central E-commerce",
+            "number_invoice": "3445568678097",
+            "dateCheckin": "2023-01-14T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Xaomi Note8",
+            "typeProduct": "technology",
+            "amount": 10,
+            "unitaryValue": 1800,
+            "totalValue": 18000
+        },
+        {
+            "id": 8,
+            "company": "Central E-commerce",
+            "number_invoice": "34g5h5565hh",
+            "dateCheckin": "2023-01-15T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Xaomi Relogio",
+            "typeProduct": "technology",
+            "amount": 5,
+            "unitaryValue": 1350,
+            "totalValue": 6750
+        },
+        {
+            "id": 9,
+            "company": "Central E-commerce",
+            "number_invoice": "33242423465hh",
+            "dateCheckin": "2023-01-12T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Panelas Tramontina",
+            "typeProduct": "house",
+            "amount":100,
+            "unitaryValue": 210,
+            "totalValue": 21000
         }
     ]
 }

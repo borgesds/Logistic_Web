@@ -17,12 +17,16 @@ export const SummaryCard = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: ${(props) => props.theme['gray-300']};
+    span {
+      font-size: small;
+      color: ${(props) => props.theme['gray-100']};
+    }
   }
 
   strong {
     display: block;
     margin-top: 0.5rem;
+    color: ${(props) => props.theme['gray-400']};
   }
 
   &:hover {
