@@ -11,7 +11,7 @@ import { SummaryCard, SummaryContainer } from './styles'
 export function Summary() {
   const { dataCheckIn, dataOutput } = useContext(DataCheckContext)
 
-  const summary = dataCheckIn.reduce(
+  const summaryStock = dataCheckIn.reduce(
     (acc, dataCheckIn) => {
       acc.stockValue += dataCheckIn.totalValue
 
@@ -22,6 +22,32 @@ export function Summary() {
     {
       stockValue: 0,
       stockQuantity: 0,
+    },
+  )
+
+  const summarySales = dataOutput.reduce(
+    (acc, dataOutput) => {
+      acc.salesAmount += dataOutput.totalValue
+
+      acc.salesQuantity += dataOutput.amount
+
+      /* const amountValue = function value() {
+        
+        dataOutput.totalValue
+      } 
+ */
+      /* const amountValue = Math.max(dataOutput.totalValue) */
+
+      /* acc.biggestSale = amountValue */
+
+     /*  const maxValue = dataOutput.totalValue
+      for (; acc.biggestSale < maxValue; acc.biggestSale === maxValue) {
+        console.log(maxValue)
+      } */
+
+      return acc
+    },
+    {
       salesAmount: 0,
       salesQuantity: 0,
       biggestSale: 0,
@@ -36,7 +62,7 @@ export function Summary() {
           <Calculator size={32} color="#FF6B1A" />
         </header>
 
-        <strong>{summary.stockValue}</strong>
+        <strong>{summaryStock.stockValue}</strong>
       </SummaryCard>
 
       <SummaryCard>
@@ -45,7 +71,7 @@ export function Summary() {
           <Package size={32} color="#FF6B1A" />
         </header>
 
-        <strong>{summary.stockQuantity}</strong>
+        <strong>{summaryStock.stockQuantity}</strong>
       </SummaryCard>
 
       <SummaryCard>
@@ -72,7 +98,7 @@ export function Summary() {
           <CurrencyDollarSimple size={32} color="#FF6B1A" />
         </header>
 
-        <strong>R$ 6788,80</strong>
+        <strong>{summarySales.biggestSale}</strong>
       </SummaryCard>
     </SummaryContainer>
   )
