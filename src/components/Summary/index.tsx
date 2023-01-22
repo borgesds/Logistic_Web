@@ -31,13 +31,12 @@ export function Summary() {
 
       acc.salesQuantity += dataOutput.amount
 
-      const maxValue = dataOutput.totalValue
-      for (; acc.biggestSale < maxValue; acc.biggestSale === maxValue) {
-        if (acc.biggestSale < maxValue) {
-          acc.biggestSale = maxValue
-        } else {
-          return acc.biggestSale
-        }
+      for (
+        const maxValue = dataOutput.totalValue;
+        acc.biggestSale < maxValue;
+        acc.biggestSale = maxValue
+      ) {
+        acc.biggestSale = maxValue
       }
 
       return acc
