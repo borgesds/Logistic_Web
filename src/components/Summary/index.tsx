@@ -31,19 +31,14 @@ export function Summary() {
 
       acc.salesQuantity += dataOutput.amount
 
-      /* const amountValue = function value() {
-        
-        dataOutput.totalValue
-      } 
- */
-      /* const amountValue = Math.max(dataOutput.totalValue) */
-
-      /* acc.biggestSale = amountValue */
-
-     /*  const maxValue = dataOutput.totalValue
+      const maxValue = dataOutput.totalValue
       for (; acc.biggestSale < maxValue; acc.biggestSale === maxValue) {
-        console.log(maxValue)
-      } */
+        if (acc.biggestSale < maxValue) {
+          acc.biggestSale = maxValue
+        } else {
+          return acc.biggestSale
+        }
+      }
 
       return acc
     },
@@ -80,7 +75,7 @@ export function Summary() {
           <Coins size={32} color="#FF6B1A" />
         </header>
 
-        <strong>R$ 127002,80</strong>
+        <strong>{summarySales.salesAmount}</strong>
       </SummaryCard>
 
       <SummaryCard>
@@ -89,7 +84,7 @@ export function Summary() {
           <Package size={32} color="#FF6B1A" />
         </header>
 
-        <strong>1322335</strong>
+        <strong>{summarySales.salesQuantity}</strong>
       </SummaryCard>
 
       <SummaryCard>
