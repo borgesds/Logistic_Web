@@ -182,6 +182,18 @@
             "amount":100,
             "unitaryValue": 210,
             "totalValue": 21000
+        },
+        {
+            "id": 9,
+            "company": "Central E-commerce",
+            "number_invoice": "33242423465hh",
+            "dateCheckin": "2023-01-12T09:26:25.951Z",
+            "third": "no",
+            "nameProduct": "Faqueiro Tramontina",
+            "typeProduct": "house",
+            "amount":200,
+            "unitaryValue": 210,
+            "totalValue": 42000
         }
     ]
 }

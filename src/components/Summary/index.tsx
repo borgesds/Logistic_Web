@@ -6,6 +6,7 @@ import {
 } from 'phosphor-react'
 import { useContext } from 'react'
 import { DataCheckContext } from '../../contexts/DataTrasactionsContext'
+import { numberFormatter, priceFormatter } from '../../utils/formatter'
 import { SummaryCard, SummaryContainer } from './styles'
 
 export function Summary() {
@@ -56,7 +57,7 @@ export function Summary() {
           <Calculator size={32} color="#FF6B1A" />
         </header>
 
-        <strong>{summaryStock.stockValue}</strong>
+        <strong>{priceFormatter.format(summaryStock.stockValue)}</strong>
       </SummaryCard>
 
       <SummaryCard>
@@ -65,7 +66,7 @@ export function Summary() {
           <Package size={32} color="#FF6B1A" />
         </header>
 
-        <strong>{summaryStock.stockQuantity}</strong>
+        <strong>{numberFormatter.format(summaryStock.stockQuantity)}</strong>
       </SummaryCard>
 
       <SummaryCard>
@@ -74,7 +75,7 @@ export function Summary() {
           <Coins size={32} color="#FF6B1A" />
         </header>
 
-        <strong>{summarySales.salesAmount}</strong>
+        <strong>{priceFormatter.format(summarySales.salesAmount)}</strong>
       </SummaryCard>
 
       <SummaryCard>
@@ -83,7 +84,7 @@ export function Summary() {
           <Package size={32} color="#FF6B1A" />
         </header>
 
-        <strong>{summarySales.salesQuantity}</strong>
+        <strong>{numberFormatter.format(summarySales.salesQuantity)}</strong>
       </SummaryCard>
 
       <SummaryCard>
@@ -92,7 +93,7 @@ export function Summary() {
           <CurrencyDollarSimple size={32} color="#FF6B1A" />
         </header>
 
-        <strong>{summarySales.biggestSale}</strong>
+        <strong>{priceFormatter.format(summarySales.biggestSale)}</strong>
       </SummaryCard>
     </SummaryContainer>
   )

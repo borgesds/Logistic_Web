@@ -1,6 +1,11 @@
 import { useContext } from 'react'
 import { DataCheckContext } from '../../contexts/DataTrasactionsContext'
 import {
+  dataFormatter,
+  numberFormatter,
+  priceFormatter,
+} from '../../utils/formatter'
+import {
   DataTable,
   TabsContent,
   TabsList,
@@ -41,7 +46,7 @@ export function TabsTable() {
                 <tr key={item.id}>
                   <td width="30%">{item.company}</td>
                   <td>{item.number_invoice}</td>
-                  <td>{item.dateCheckin}</td>
+                  <td>{dataFormatter.format(new Date(item.dateCheckin))}</td>
                   <ThirdPartyProducts variant={item.third}>
                     {item.third}
                   </ThirdPartyProducts>
@@ -49,9 +54,9 @@ export function TabsTable() {
                   <TypeProducts variant={item.typeProduct}>
                     {item.typeProduct}
                   </TypeProducts>
-                  <td>{item.amount}</td>
-                  <td>{item.unitaryValue}</td>
-                  <td>{`R$ ${item.totalValue}`}</td>
+                  <td>{numberFormatter.format(item.amount)}</td>
+                  <td>{numberFormatter.format(item.unitaryValue)}</td>
+                  <td>{priceFormatter.format(item.totalValue)}</td>
                 </tr>
               )
             })}
@@ -80,7 +85,7 @@ export function TabsTable() {
                 <tr key={item.id}>
                   <td width="30%">{item.company}</td>
                   <td>{item.number_invoice}</td>
-                  <td>{item.dateCheckin}</td>
+                  <td>{dataFormatter.format(new Date(item.dateCheckin))}</td>
                   <ThirdPartyProducts variant={item.third}>
                     {item.third}
                   </ThirdPartyProducts>
@@ -88,9 +93,9 @@ export function TabsTable() {
                   <TypeProducts variant={item.typeProduct}>
                     {item.typeProduct}
                   </TypeProducts>
-                  <td>{item.amount}</td>
-                  <td>{item.unitaryValue}</td>
-                  <td>{`R$ ${item.totalValue}`}</td>
+                  <td>{numberFormatter.format(item.amount)}</td>
+                  <td>{numberFormatter.format(item.unitaryValue)}</td>
+                  <td>{priceFormatter.format(item.totalValue)}</td>
                 </tr>
               )
             })}
