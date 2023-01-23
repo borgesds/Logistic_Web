@@ -1,5 +1,8 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { X } from 'phosphor-react'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import {
   CloseButton,
   Content,
@@ -12,7 +15,33 @@ import {
   ThirdTypeButton,
 } from './styles'
 
+const newDataFromSchema = z.object({
+  id: z.number(),
+  company: z.string(),
+  number_invoice: z.string(),
+  dateCheckin: z.date(),
+  third: z.enum(['yes', 'no']),
+  nameProduct: z.string(),
+  typeProduct: z.enum([
+    'food',
+    'industrial',
+    'house',
+    'public',
+    'technology',
+    'others',
+  ]),
+  amount: z.number(),
+  unitaryValue: z.number(),
+  totalValue: z.number(),
+})
+
+type NewDateFromInputs = z.infer<typeof newDataFromSchema>
+
 export function NewCheckInModal() {
+  const { register, handleSubmit } = useForm<NewDateFromInputs>({
+    resolver: zodResolver(newDataFromSchema),
+  })
+
   return (
     <Dialog.Portal>
       <Overlay />
