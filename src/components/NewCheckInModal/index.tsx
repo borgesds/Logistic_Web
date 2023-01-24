@@ -15,11 +15,14 @@ import {
   ThirdTypeButton,
 } from './styles'
 
-const DataFromSchema = z.object({
-  id: z.number(),
+const DataFormSchema = z.object({
   company: z.string(),
+  nameProduct: z.string(),
   number_invoice: z.string(),
-  dateCheckin: z.date(),
+  dateCheckin: z.string(),
+  third: z.enum(['yes', 'no']),
+  /* number_invoice: z.string(),
+  dateCheckin: z.string(),
   third: z.enum(['yes', 'no']),
   nameProduct: z.string(),
   typeProduct: z.enum([
@@ -32,10 +35,10 @@ const DataFromSchema = z.object({
   ]),
   amount: z.number(),
   unitaryValue: z.number(),
-  totalValue: z.number(),
+  totalValue: z.number(), */
 })
 
-type DateFromInputs = z.infer<typeof DataFromSchema>
+type DateFormInputs = z.infer<typeof DataFormSchema>
 
 export function NewCheckInModal() {
   const {
@@ -43,11 +46,11 @@ export function NewCheckInModal() {
     register,
     handleSubmit,
     formState: { isSubmitting },
-  } = useForm<DateFromInputs>({
-    resolver: zodResolver(DataFromSchema),
+  } = useForm<DateFormInputs>({
+    resolver: zodResolver(DataFormSchema),
   })
 
-  function handleSubmitNewData(data: DateFromInputs) {
+  function handleSubmitNewData(data: DateFormInputs) {
     console.log(data)
   }
 
@@ -77,10 +80,65 @@ export function NewCheckInModal() {
               {...register('nameProduct')}
             />
             <input
-              type="number"
+              type="text"
               placeholder="Número da nota"
               required
-              {...register('number_invoice', { valueAsNumber: true })}
+              {...register('number_invoice')}
+            />
+            <input
+              type="date"
+              placeholder="Data de Emissão"
+              required
+              {...register('dateCheckin')}
+            />
+
+            <Controller
+              control={control}
+              name="third"
+              render={({ field }) => {
+                console.log(field)
+                return (
+                  <ThirdType onValueChange={field.onChange} value={field.value}>
+                    <SpanTitle>Fornecedor</SpanTitle>
+                    <ThirdTypeButton variant="yes" value="sim">
+                      <span>Terceiro? Sim</span>
+                    </ThirdTypeButton>
+
+                    <ThirdTypeButton variant="no" value="não">
+                      <span>Terceiro? Não</span>
+                    </ThirdTypeButton>
+                  </ThirdType>
+                )
+              }}
+            />
+          </div>
+
+          <div>
+            <button type="submit" disabled={isSubmitting}>
+              Cadastrar
+            </button>
+          </div>
+        </form>
+
+        {/* <form onSubmit={handleSubmit(handleSubmitNewData)}>
+          <div>
+            <input
+              type="text"
+              placeholder="Empresa"
+              required
+              {...register('company')}
+            />
+            <input
+              type="text"
+              placeholder="Nome do produto"
+              required
+              {...register('nameProduct')}
+            />
+            <input
+              type="text"
+              placeholder="Número da nota"
+              required
+              {...register('number_invoice')}
             />
             <input
               type="date"
@@ -112,31 +170,42 @@ export function NewCheckInModal() {
           <div>
             <SpanTitle>Tipo do produto</SpanTitle>
 
-            <ProductType>
-              <DivProductType>
-                <ProductTypeButton value="Alimento">
-                  <span>Alimento</span>
-                </ProductTypeButton>
+            <Controller
+              control={control}
+              name="typeProduct"
+              render={({ field }) => {
+                return (
+                  <ProductType
+                    onValueChange={field.onChange}
+                    value={field.value}
+                  >
+                    <DivProductType>
+                      <ProductTypeButton value="Alimento">
+                        <span>Alimento</span>
+                      </ProductTypeButton>
 
-                <ProductTypeButton value="Industrial">
-                  <span>Industrial</span>
-                </ProductTypeButton>
+                      <ProductTypeButton value="Industrial">
+                        <span>Industrial</span>
+                      </ProductTypeButton>
 
-                <ProductTypeButton value="Casa">
-                  <span>Casa</span>
-                </ProductTypeButton>
-              </DivProductType>
+                      <ProductTypeButton value="Casa">
+                        <span>Casa</span>
+                      </ProductTypeButton>
+                    </DivProductType>
 
-              <DivProductType>
-                <ProductTypeButton value="Tecnologia">
-                  <span>Tecnologia</span>
-                </ProductTypeButton>
+                    <DivProductType>
+                      <ProductTypeButton value="Tecnologia">
+                        <span>Tecnologia</span>
+                      </ProductTypeButton>
 
-                <ProductTypeButton value="Outros">
-                  <span>Outros</span>
-                </ProductTypeButton>
-              </DivProductType>
-            </ProductType>
+                      <ProductTypeButton value="Outros">
+                        <span>Outros</span>
+                      </ProductTypeButton>
+                    </DivProductType>
+                  </ProductType>
+                )
+              }}
+            />
 
             <input
               type="number"
@@ -163,7 +232,7 @@ export function NewCheckInModal() {
               </button>
             </div>
           </div>
-        </form>
+        </form> */}
       </Content>
     </Dialog.Portal>
   )

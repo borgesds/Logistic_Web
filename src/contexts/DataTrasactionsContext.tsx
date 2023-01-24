@@ -56,8 +56,6 @@ export function DataTransactionProvider({
     setDataOutput(data)
   }
 
-  console.log(dataOutput)
-
   useEffect(() => {
     loadDataCheckIn()
     loadDataOutput()
