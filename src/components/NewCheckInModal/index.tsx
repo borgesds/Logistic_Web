@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { X } from 'phosphor-react'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import {
@@ -15,7 +15,7 @@ import {
   ThirdTypeButton,
 } from './styles'
 
-const newDataFromSchema = z.object({
+const DataFromSchema = z.object({
   id: z.number(),
   company: z.string(),
   number_invoice: z.string(),
@@ -35,12 +35,21 @@ const newDataFromSchema = z.object({
   totalValue: z.number(),
 })
 
-type NewDateFromInputs = z.infer<typeof newDataFromSchema>
+type DateFromInputs = z.infer<typeof DataFromSchema>
 
 export function NewCheckInModal() {
-  const { register, handleSubmit } = useForm<NewDateFromInputs>({
-    resolver: zodResolver(newDataFromSchema),
+  const {
+    control,
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<DateFromInputs>({
+    resolver: zodResolver(DataFromSchema),
   })
+
+  function handleSubmitNewData(data: DateFromInputs) {
+    console.log(data)
+  }
 
   return (
     <Dialog.Portal>
@@ -53,23 +62,51 @@ export function NewCheckInModal() {
           <X size={24} />
         </CloseButton>
 
-        <form action="">
+        <form onSubmit={handleSubmit(handleSubmitNewData)}>
           <div>
-            <input type="text" placeholder="Empresa" required />
-            <input type="text" placeholder="Nome do produto" required />
-            <input type="number" placeholder="Número da nota" required />
-            <input type="date" placeholder="Data de Emissão" required />
+            <input
+              type="text"
+              placeholder="Empresa"
+              required
+              {...register('company')}
+            />
+            <input
+              type="text"
+              placeholder="Nome do produto"
+              required
+              {...register('nameProduct')}
+            />
+            <input
+              type="number"
+              placeholder="Número da nota"
+              required
+              {...register('number_invoice', { valueAsNumber: true })}
+            />
+            <input
+              type="date"
+              placeholder="Data de Emissão"
+              required
+              {...register('dateCheckin')}
+            />
 
-            <ThirdType>
-              <SpanTitle>Fornecedor</SpanTitle>
-              <ThirdTypeButton variant="yes" value="sim">
-                <span>Terceiro? Sim</span>
-              </ThirdTypeButton>
+            <Controller
+              control={control}
+              name="third"
+              render={({ field }) => {
+                return (
+                  <ThirdType onValueChange={field.onChange} value={field.value}>
+                    <SpanTitle>Fornecedor</SpanTitle>
+                    <ThirdTypeButton variant="yes" value="sim">
+                      <span>Terceiro? Sim</span>
+                    </ThirdTypeButton>
 
-              <ThirdTypeButton variant="no" value="não">
-                <span>Terceiro? Não</span>
-              </ThirdTypeButton>
-            </ThirdType>
+                    <ThirdTypeButton variant="no" value="não">
+                      <span>Terceiro? Não</span>
+                    </ThirdTypeButton>
+                  </ThirdType>
+                )
+              }}
+            />
           </div>
 
           <div>
@@ -101,12 +138,29 @@ export function NewCheckInModal() {
               </DivProductType>
             </ProductType>
 
-            <input type="number" placeholder="Quantidade" required />
-            <input type="number" placeholder="Valor unitário" required />
-            <input type="number" placeholder="Valor Total" required />
+            <input
+              type="number"
+              placeholder="Quantidade"
+              required
+              {...register('amount', { valueAsNumber: true })}
+            />
+            <input
+              type="number"
+              placeholder="Valor unitário"
+              required
+              {...register('unitaryValue', { valueAsNumber: true })}
+            />
+            <input
+              type="number"
+              placeholder="Valor Total"
+              required
+              {...register('totalValue', { valueAsNumber: true })}
+            />
 
             <div>
-              <button type="submit">Cadastrar</button>
+              <button type="submit" disabled={isSubmitting}>
+                Cadastrar
+              </button>
             </div>
           </div>
         </form>
