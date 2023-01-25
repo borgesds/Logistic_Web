@@ -19,23 +19,16 @@ const DataFormSchema = z.object({
   company: z.string(),
   nameProduct: z.string(),
   number_invoice: z.string(),
+  /* dateCheckin: z.string(),
+  third: z.enum(['yes', 'no']), */
+  /* number_invoice: z.string(), */
   dateCheckin: z.string(),
   third: z.enum(['yes', 'no']),
-  /* number_invoice: z.string(),
-  dateCheckin: z.string(),
-  third: z.enum(['yes', 'no']),
-  nameProduct: z.string(),
-  typeProduct: z.enum([
-    'food',
-    'industrial',
-    'house',
-    'public',
-    'technology',
-    'others',
-  ]),
+  /* nameProduct: z.string(), */
+  typeProduct: z.enum(['food', 'industrial', 'house', 'technology', 'others']),
   amount: z.number(),
   unitaryValue: z.number(),
-  totalValue: z.number(), */
+  totalValue: z.number(),
 })
 
 type DateFormInputs = z.infer<typeof DataFormSchema>
@@ -113,60 +106,6 @@ export function NewCheckInModal() {
           </div>
 
           <div>
-            <button type="submit" disabled={isSubmitting}>
-              Cadastrar
-            </button>
-          </div>
-        </form>
-
-        {/* <form onSubmit={handleSubmit(handleSubmitNewData)}>
-          <div>
-            <input
-              type="text"
-              placeholder="Empresa"
-              required
-              {...register('company')}
-            />
-            <input
-              type="text"
-              placeholder="Nome do produto"
-              required
-              {...register('nameProduct')}
-            />
-            <input
-              type="text"
-              placeholder="Número da nota"
-              required
-              {...register('number_invoice')}
-            />
-            <input
-              type="date"
-              placeholder="Data de Emissão"
-              required
-              {...register('dateCheckin')}
-            />
-
-            <Controller
-              control={control}
-              name="third"
-              render={({ field }) => {
-                return (
-                  <ThirdType onValueChange={field.onChange} value={field.value}>
-                    <SpanTitle>Fornecedor</SpanTitle>
-                    <ThirdTypeButton variant="yes" value="sim">
-                      <span>Terceiro? Sim</span>
-                    </ThirdTypeButton>
-
-                    <ThirdTypeButton variant="no" value="não">
-                      <span>Terceiro? Não</span>
-                    </ThirdTypeButton>
-                  </ThirdType>
-                )
-              }}
-            />
-          </div>
-
-          <div>
             <SpanTitle>Tipo do produto</SpanTitle>
 
             <Controller
@@ -179,25 +118,25 @@ export function NewCheckInModal() {
                     value={field.value}
                   >
                     <DivProductType>
-                      <ProductTypeButton value="Alimento">
+                      <ProductTypeButton value="food">
                         <span>Alimento</span>
                       </ProductTypeButton>
 
-                      <ProductTypeButton value="Industrial">
+                      <ProductTypeButton value="industrial">
                         <span>Industrial</span>
                       </ProductTypeButton>
 
-                      <ProductTypeButton value="Casa">
+                      <ProductTypeButton value="house">
                         <span>Casa</span>
                       </ProductTypeButton>
                     </DivProductType>
 
                     <DivProductType>
-                      <ProductTypeButton value="Tecnologia">
+                      <ProductTypeButton value="technology">
                         <span>Tecnologia</span>
                       </ProductTypeButton>
 
-                      <ProductTypeButton value="Outros">
+                      <ProductTypeButton value="others">
                         <span>Outros</span>
                       </ProductTypeButton>
                     </DivProductType>
@@ -231,7 +170,7 @@ export function NewCheckInModal() {
               </button>
             </div>
           </div>
-        </form> */}
+        </form>
       </Content>
     </Dialog.Portal>
   )
