@@ -96,15 +96,14 @@ export function NewCheckInModal() {
               control={control}
               name="third"
               render={({ field }) => {
-                console.log(field)
                 return (
                   <ThirdType onValueChange={field.onChange} value={field.value}>
                     <SpanTitle>Fornecedor</SpanTitle>
-                    <ThirdTypeButton variant="yes" value="sim">
+                    <ThirdTypeButton variant="yes" value="yes">
                       <span>Terceiro? Sim</span>
                     </ThirdTypeButton>
 
-                    <ThirdTypeButton variant="no" value="não">
+                    <ThirdTypeButton variant="no" value="no">
                       <span>Terceiro? Não</span>
                     </ThirdTypeButton>
                   </ThirdType>
