@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
+import { api } from '../lib/axios'
 
 interface dataInput {
   id: number
@@ -19,16 +20,35 @@ interface dataInput {
   totalValue: number
 }
 
-/* 
-Esse é o valor que vai ser enviado, como:
-const { dataCheckIn } = useContext(DataTransactionContext)
-*/
-interface DataTransactionContextType {
-  dataCheckIn: dataInput[]
-  dataOutput: dataInput[]
+interface dataInputTransaction {
+  company: string
+  number_invoice: string
+  dateCheckin: string
+  third: 'yes' | 'no'
+  nameProduct: string
+  typeProduct:
+    | 'food'
+    | 'industrial'
+    | 'house'
+    | 'public'
+    | 'technology'
+    | 'others'
+  amount: number
+  unitaryValue: number
+  totalValue: number
 }
 
 /* dataCheckIn e dataOutput */
+interface DataTransactionContextType {
+  dataCheckIn: dataInput[]
+  dataOutput: dataInput[]
+  createDataInputCheckIn: (data: dataInput) => Promise<void>
+}
+
+/* 
+Esse é o valor que vai ser enviado, como:
+const { dataCheckIn } = useContext(DDataCheckContext)
+*/
 export const DataCheckContext = createContext({} as DataTransactionContextType)
 
 interface dataTransactionProviderProps {
@@ -44,16 +64,55 @@ export function DataTransactionProvider({
 
   /* dataCheckIn */
   async function loadDataCheckIn() {
-    const response = await fetch('http://localhost:3333/checkin')
-    const data = await response.json()
-    setDataCheckIn(data)
+    const response = await api.get('/checkin', {
+      params: {
+        _sort: 'dateCheckin',
+        _order: 'desc',
+      },
+    })
+
+    setDataCheckIn(response.data)
   }
 
   /* dataOutput */
   async function loadDataOutput() {
-    const response = await fetch('http://localhost:3333/output')
-    const data = await response.json()
-    setDataOutput(data)
+    const response = await api.get('/output', {
+      params: {
+        _sort: 'dateCheckin',
+        _order: 'desc',
+      },
+    })
+    setDataOutput(response.data)
+  }
+
+  /* Inputs create CheckIn */
+  async function createDataInputCheckIn(data: dataInputTransaction) {
+    const {
+      company,
+      nameProduct,
+      number_invoice,
+      dateCheckin,
+      third,
+      typeProduct,
+      amount,
+      unitaryValue,
+      totalValue,
+    } = data
+
+    const response = await api.post('/checkin', {
+      company,
+      nameProduct,
+      number_invoice,
+      dateCheckin,
+      third,
+      typeProduct,
+      amount,
+      unitaryValue,
+      totalValue,
+    })
+
+    /* Assim que enviar o form atualizar a tabela */
+    setDataCheckIn((state) => [response.data, ...state])
   }
 
   useEffect(() => {
@@ -63,7 +122,9 @@ export function DataTransactionProvider({
 
   return (
     <>
-      <DataCheckContext.Provider value={{ dataCheckIn, dataOutput }}>
+      <DataCheckContext.Provider
+        value={{ dataCheckIn, dataOutput, createDataInputCheckIn }}
+      >
         {children}
       </DataCheckContext.Provider>
     </>

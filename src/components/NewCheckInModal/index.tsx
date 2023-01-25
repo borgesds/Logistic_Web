@@ -14,17 +14,15 @@ import {
   ThirdType,
   ThirdTypeButton,
 } from './styles'
+import { useContext } from 'react'
+import { DataCheckContext } from '../../contexts/DataTrasactionsContext'
 
 const DataFormSchema = z.object({
   company: z.string(),
   nameProduct: z.string(),
   number_invoice: z.string(),
-  /* dateCheckin: z.string(),
-  third: z.enum(['yes', 'no']), */
-  /* number_invoice: z.string(), */
   dateCheckin: z.string(),
   third: z.enum(['yes', 'no']),
-  /* nameProduct: z.string(), */
   typeProduct: z.enum(['food', 'industrial', 'house', 'technology', 'others']),
   amount: z.number(),
   unitaryValue: z.number(),
@@ -34,17 +32,46 @@ const DataFormSchema = z.object({
 type DateFormInputs = z.infer<typeof DataFormSchema>
 
 export function NewCheckInModal() {
+  const { createDataInputCheckIn } = useContext(DataCheckContext)
+
   const {
     control,
     register,
     handleSubmit,
     formState: { isSubmitting },
+    reset,
   } = useForm<DateFormInputs>({
     resolver: zodResolver(DataFormSchema),
   })
 
-  function handleSubmitNewData(data: DateFormInputs) {
-    console.log(data)
+  /*  */
+  async function handleSubmitNewData(data: DateFormInputs) {
+    const {
+      company,
+      nameProduct,
+      number_invoice,
+      dateCheckin,
+      third,
+      typeProduct,
+      amount,
+      unitaryValue,
+      totalValue,
+    } = data
+
+    /* Mandando os inputs para o context */
+    await createDataInputCheckIn({
+      company,
+      nameProduct,
+      number_invoice,
+      dateCheckin,
+      third,
+      typeProduct,
+      amount,
+      unitaryValue,
+      totalValue,
+    })
+
+    reset()
   }
 
   return (

@@ -55,7 +55,7 @@ export function TabsTable() {
                     {item.typeProduct}
                   </TypeProducts>
                   <td>{numberFormatter.format(item.amount)}</td>
-                  <td>{numberFormatter.format(item.unitaryValue)}</td>
+                  <td>{priceFormatter.format(item.unitaryValue)}</td>
                   <td>{priceFormatter.format(item.totalValue)}</td>
                 </tr>
               )
@@ -94,7 +94,7 @@ export function TabsTable() {
                     {item.typeProduct}
                   </TypeProducts>
                   <td>{numberFormatter.format(item.amount)}</td>
-                  <td>{numberFormatter.format(item.unitaryValue)}</td>
+                  <td>{priceFormatter.format(item.unitaryValue)}</td>
                   <td>{priceFormatter.format(item.totalValue)}</td>
                 </tr>
               )
