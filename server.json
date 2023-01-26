@@ -107,6 +107,30 @@
       "unitaryValue": 10,
       "totalValue": 3000,
       "id": 9
+    },
+    {
+      "company": "Serralheria Carlitos",
+      "nameProduct": "Portão corrente",
+      "number_invoice": "e32f3fcf5grcft4e",
+      "dateCheckin": "2023-01-25",
+      "third": "yes",
+      "typeProduct": "others",
+      "amount": 1,
+      "unitaryValue": 2500,
+      "totalValue": 2500,
+      "id": 10
+    },
+    {
+      "company": "Casa Doce",
+      "nameProduct": "Jujubas coloridas Pacote",
+      "number_invoice": "4yuytrrtyui7654",
+      "dateCheckin": "2023-01-26",
+      "third": "yes",
+      "typeProduct": "food",
+      "amount": 500,
+      "unitaryValue": 10,
+      "totalValue": 5000,
+      "id": 11
     }
   ],
   "output": [
@@ -229,6 +253,30 @@
       "amount": 200,
       "unitaryValue": 210,
       "totalValue": 42000
+    },
+    {
+      "company": "Serralheria Carlitos",
+      "nameProduct": "Portao corrente",
+      "number_invoice": "ewfwefewwe567890",
+      "dateCheckin": "2023-01-26",
+      "third": "yes",
+      "typeProduct": "others",
+      "amount": 1,
+      "unitaryValue": 3400,
+      "totalValue": 3400,
+      "id": 10
+    },
+    {
+      "company": "Metal Surf",
+      "nameProduct": "Aço 35",
+      "number_invoice": "rghrtyjukilçkh678765",
+      "dateCheckin": "2023-01-26",
+      "third": "yes",
+      "typeProduct": "industrial",
+      "amount": 1,
+      "unitaryValue": 65788,
+      "totalValue": 65788,
+      "id": 11
     }
   ]
 }

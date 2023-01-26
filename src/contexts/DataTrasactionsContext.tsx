@@ -43,6 +43,7 @@ interface DataTransactionContextType {
   dataCheckIn: dataInput[]
   dataOutput: dataInput[]
   createDataInputCheckIn: (data: dataInput) => Promise<void>
+  createDataInputOutput: (data: dataInput) => Promise<void>
 }
 
 /* 
@@ -112,6 +113,36 @@ export function DataTransactionProvider({
     })
 
     /* Assim que enviar o form atualizar a tabela */
+    setDataOutput((state) => [response.data, ...state])
+  }
+
+  /* Inputs create Output */
+  async function createDataInputOutput(data: dataInputTransaction) {
+    const {
+      company,
+      nameProduct,
+      number_invoice,
+      dateCheckin,
+      third,
+      typeProduct,
+      amount,
+      unitaryValue,
+      totalValue,
+    } = data
+
+    const response = await api.post('/output', {
+      company,
+      nameProduct,
+      number_invoice,
+      dateCheckin,
+      third,
+      typeProduct,
+      amount,
+      unitaryValue,
+      totalValue,
+    })
+
+    /* Assim que enviar o form atualizar a tabela */
     setDataCheckIn((state) => [response.data, ...state])
   }
 
@@ -123,7 +154,12 @@ export function DataTransactionProvider({
   return (
     <>
       <DataCheckContext.Provider
-        value={{ dataCheckIn, dataOutput, createDataInputCheckIn }}
+        value={{
+          dataCheckIn,
+          dataOutput,
+          createDataInputCheckIn,
+          createDataInputOutput,
+        }}
       >
         {children}
       </DataCheckContext.Provider>

@@ -44,7 +44,7 @@ export function NewCheckInModal() {
     resolver: zodResolver(DataFormSchema),
   })
 
-  /*  */
+  /* Inputs */
   async function handleSubmitNewData(data: DateFormInputs) {
     const {
       company,
