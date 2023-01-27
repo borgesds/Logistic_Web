@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 import { api } from '../lib/axios'
 
 interface dataInput {
@@ -64,7 +70,7 @@ export function DataTransactionProvider({
   const [dataOutput, setDataOutput] = useState<dataInput[]>([])
 
   /* dataCheckIn */
-  async function loadDataCheckIn() {
+  const loadDataCheckIn = useCallback(async () => {
     const response = await api.get('/checkin', {
       params: {
         _sort: 'dateCheckin',
@@ -73,10 +79,10 @@ export function DataTransactionProvider({
     })
 
     setDataCheckIn(response.data)
-  }
+  }, [])
 
   /* dataOutput */
-  async function loadDataOutput() {
+  const loadDataOutput = useCallback(async () => {
     const response = await api.get('/output', {
       params: {
         _sort: 'dateCheckin',
@@ -84,72 +90,78 @@ export function DataTransactionProvider({
       },
     })
     setDataOutput(response.data)
-  }
+  }, [])
 
   /* Inputs create CheckIn */
-  async function createDataInputCheckIn(data: dataInputTransaction) {
-    const {
-      company,
-      nameProduct,
-      number_invoice,
-      dateCheckin,
-      third,
-      typeProduct,
-      amount,
-      unitaryValue,
-      totalValue,
-    } = data
+  const createDataInputCheckIn = useCallback(
+    async (data: dataInputTransaction) => {
+      const {
+        company,
+        nameProduct,
+        number_invoice,
+        dateCheckin,
+        third,
+        typeProduct,
+        amount,
+        unitaryValue,
+        totalValue,
+      } = data
 
-    const response = await api.post('/checkin', {
-      company,
-      nameProduct,
-      number_invoice,
-      dateCheckin,
-      third,
-      typeProduct,
-      amount,
-      unitaryValue,
-      totalValue,
-    })
+      const response = await api.post('/checkin', {
+        company,
+        nameProduct,
+        number_invoice,
+        dateCheckin,
+        third,
+        typeProduct,
+        amount,
+        unitaryValue,
+        totalValue,
+      })
 
-    /* Assim que enviar o form atualizar a tabela */
-    setDataOutput((state) => [response.data, ...state])
-  }
+      /* Assim que enviar o form atualizar a tabela */
+      setDataOutput((state) => [response.data, ...state])
+    },
+    [],
+  )
 
   /* Inputs create Output */
-  async function createDataInputOutput(data: dataInputTransaction) {
-    const {
-      company,
-      nameProduct,
-      number_invoice,
-      dateCheckin,
-      third,
-      typeProduct,
-      amount,
-      unitaryValue,
-      totalValue,
-    } = data
+  const createDataInputOutput = useCallback(
+    async (data: dataInputTransaction) => {
+      const {
+        company,
+        nameProduct,
+        number_invoice,
+        dateCheckin,
+        third,
+        typeProduct,
+        amount,
+        unitaryValue,
+        totalValue,
+      } = data
 
-    const response = await api.post('/output', {
-      company,
-      nameProduct,
-      number_invoice,
-      dateCheckin,
-      third,
-      typeProduct,
-      amount,
-      unitaryValue,
-      totalValue,
-    })
+      const response = await api.post('/output', {
+        company,
+        nameProduct,
+        number_invoice,
+        dateCheckin,
+        third,
+        typeProduct,
+        amount,
+        unitaryValue,
+        totalValue,
+      })
 
-    /* Assim que enviar o form atualizar a tabela */
-    setDataCheckIn((state) => [response.data, ...state])
-  }
+      /* Assim que enviar o form atualizar a tabela */
+      setDataCheckIn((state) => [response.data, ...state])
+    },
+    [],
+  )
 
   useEffect(() => {
     loadDataCheckIn()
     loadDataOutput()
-  }, [])
+  }, [loadDataCheckIn, loadDataOutput])
 
   return (
     <>

@@ -131,6 +131,42 @@
       "unitaryValue": 10,
       "totalValue": 5000,
       "id": 11
+    },
+    {
+      "company": "Cellt Celulares",
+      "nameProduct": "Capinha de celular",
+      "number_invoice": "dfjheery6787treergh",
+      "dateCheckin": "2023-01-28",
+      "third": "yes",
+      "typeProduct": "others",
+      "amount": 500,
+      "unitaryValue": 20,
+      "totalValue": 10000,
+      "id": 12
+    },
+    {
+      "company": "Cellt Celulares",
+      "nameProduct": "Notbook Lenovo",
+      "number_invoice": "3456uhgfdsdf",
+      "dateCheckin": "2023-01-27",
+      "third": "yes",
+      "typeProduct": "technology",
+      "amount": 10,
+      "unitaryValue": 3400,
+      "totalValue": 3400,
+      "id": 13
+    },
+    {
+      "company": "Cellt Celulares",
+      "nameProduct": "Notbook Lenovo",
+      "number_invoice": "3456uhgfds",
+      "dateCheckin": "2023-01-27",
+      "third": "yes",
+      "typeProduct": "technology",
+      "amount": 10,
+      "unitaryValue": 2900,
+      "totalValue": 2900,
+      "id": 14
     }
   ],
   "output": [
@@ -277,6 +313,42 @@
       "unitaryValue": 65788,
       "totalValue": 65788,
       "id": 11
+    },
+    {
+      "company": "Inptus technologies",
+      "nameProduct": "Tablet Multimedia",
+      "number_invoice": "dsfgh7654edfghjk",
+      "dateCheckin": "2023-01-27",
+      "third": "yes",
+      "typeProduct": "technology",
+      "amount": 1,
+      "unitaryValue": 560,
+      "totalValue": 560,
+      "id": 12
+    },
+    {
+      "company": "Doce ou Travessura",
+      "nameProduct": "Bala azedinha pacote",
+      "number_invoice": "ergffsfdbnver543",
+      "dateCheckin": "2023-01-27",
+      "third": "yes",
+      "typeProduct": "food",
+      "amount": 10,
+      "unitaryValue": 10,
+      "totalValue": 100,
+      "id": 13
+    },
+    {
+      "company": "DigitalGraph",
+      "nameProduct": "Adesivo",
+      "number_invoice": "we3r45y6u7ujhgf",
+      "dateCheckin": "2023-01-27",
+      "third": "yes",
+      "typeProduct": "others",
+      "amount": 100,
+      "unitaryValue": 2,
+      "totalValue": 200,
+      "id": 14
     }
   ]
 }

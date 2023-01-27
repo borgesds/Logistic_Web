@@ -53,7 +53,7 @@ export function Summary() {
     <SummaryContainer>
       <SummaryCard>
         <header>
-          <span>Valor do Estoque</span>
+          <span>Valor de Entrada Est.</span>
           <Calculator size={32} color="#FF6B1A" />
         </header>
 
@@ -62,7 +62,7 @@ export function Summary() {
 
       <SummaryCard>
         <header>
-          <span>Qtd em Estoque</span>
+          <span>Qtd de Entrada Est.</span>
           <Package size={32} color="#FF6B1A" />
         </header>
 

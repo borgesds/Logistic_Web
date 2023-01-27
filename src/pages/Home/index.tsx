@@ -1,3 +1,4 @@
+import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
 import { TabsTable } from '../../components/Tabs'
@@ -19,6 +20,8 @@ export function Home() {
           </TableContainer>
         </MainContent>
       </MainContainer>
+
+      <Footer />
     </div>
   )
 }
